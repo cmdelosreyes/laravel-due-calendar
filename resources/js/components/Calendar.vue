@@ -20,8 +20,8 @@ export default {
     },
     methods: {
         async fetchEvents(fetchInfo) {
-            let startAt = dayjs(fetchInfo.startStr).format('YYYY-MM-DD');
-            let endAt = dayjs(fetchInfo.endStr).format('YYYY-MM-DD');
+            const startAt = dayjs(fetchInfo.startStr).format('YYYY-MM-DD');
+            const endAt = dayjs(fetchInfo.endStr).format('YYYY-MM-DD');
 
             let events = [];
 
