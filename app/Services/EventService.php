@@ -19,13 +19,11 @@ class EventService extends AbstractService
             data_get($data, 'days')
         );
 
-        // dd($dates);
-
         // Delete Schedules
         $event->schedules()->delete();
 
         // Create Schedules
-        $test = $event->schedules()->createMany($dates);
+        $event->schedules()->createMany($dates);
 
         return $event->toArray();
     }

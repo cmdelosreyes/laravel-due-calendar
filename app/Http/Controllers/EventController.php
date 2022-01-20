@@ -35,7 +35,7 @@ class EventController extends Controller
         $event->store($request->validated());
 
         return response()->json([
-            'message' => 'Success!',
+            'message' => 'Event successfully saved!',
             'status' => true
         ]);
     }
