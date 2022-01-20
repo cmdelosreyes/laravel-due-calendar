@@ -19530,12 +19530,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.$parent.$refs.fullCalendar.$refs.fullCalendar.getApi().refetchEvents();
       })["catch"](function (err) {
         var formErrors = {};
-        Object.keys(err.response.data.errors).forEach(function (error) {
-          formErrors[error] = err.response.data.errors[error][0];
+        var errorResponse = err.response.data;
+        Object.keys(errorResponse.errors).forEach(function (error) {
+          formErrors[error] = errorResponse.errors[error][0];
         });
         _this.formErrors = formErrors;
-      })["finally"](function () {
-        return _this.loading = false;
       });
     }
   }

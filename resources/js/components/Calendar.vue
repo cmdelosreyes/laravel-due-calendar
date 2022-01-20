@@ -20,10 +20,10 @@ export default {
     },
     methods: {
         async fetchEvents(fetchInfo) {
-            var startAt = dayjs(fetchInfo.startStr).format('YYYY-MM-DD');
-            var endAt = dayjs(fetchInfo.endStr).format('YYYY-MM-DD');
+            let startAt = dayjs(fetchInfo.startStr).format('YYYY-MM-DD');
+            let endAt = dayjs(fetchInfo.endStr).format('YYYY-MM-DD');
 
-            var events = [];
+            let events = [];
 
             await this.axios
                 .get('http://localhost:8000/api/calendar', {

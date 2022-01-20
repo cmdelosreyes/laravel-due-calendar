@@ -60,13 +60,14 @@ export default {
                     .catch(err => {
                         const formErrors = {};
 
-                        Object.keys(err.response.data.errors).forEach(function(error) {
-                            formErrors[error] = err.response.data.errors[error][0];
+                        const errorResponse = err.response.data;
+
+                        Object.keys(errorResponse.errors).forEach(function(error) {
+                            formErrors[error] = errorResponse.errors[error][0];
                         });
 
                         this.formErrors = formErrors;
                     })
-                    .finally(() => this.loading = false)
             },
         }
     }
