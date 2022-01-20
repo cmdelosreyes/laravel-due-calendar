@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\EventFilter;
 use App\Filters\EventScheduleFilter;
 use App\Http\Requests\EventStoreRequest;
-use App\Models\Event;
 use App\Models\EventSchedule;
 use App\Services\EventService;
 

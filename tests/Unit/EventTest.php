@@ -4,8 +4,6 @@ namespace Tests\Unit;
 
 use App\Enums\CarbonDays;
 use App\Models\Event;
-use App\Models\EventSchedule;
-use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
