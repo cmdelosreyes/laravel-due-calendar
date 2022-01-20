@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Filters\EventFilter;
+use App\Filters\EventScheduleFilter;
 use App\Http\Requests\EventStoreRequest;
 use App\Models\Event;
+use App\Models\EventSchedule;
 use App\Services\EventService;
 
 class EventController extends Controller
@@ -14,11 +16,11 @@ class EventController extends Controller
      * 
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index(EventFilter $filters)
+    public function index(EventScheduleFilter $filters)
     {
-        $events = Event::filter($filters)
-                        ->with('schedules')
-                        ->paginate();
+        $events = EventSchedule::filter($filters)
+                    ->with('event')
+                    ->get();
 
         return response()->json($events);
     }
