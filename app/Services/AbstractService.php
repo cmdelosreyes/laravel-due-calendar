@@ -9,7 +9,7 @@ class AbstractService
     /**
      * The model of the Service
      */
-    public Model $model;
+    protected Model $model;
 
     /**
      * Create the instance.
